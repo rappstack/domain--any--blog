@@ -39,12 +39,12 @@ export function sorted_dehydrated_post_meta_a1__new(
 export function post_meta__hydrate({
 	pub_date: _pub_date,
 	updated_date: _updated_date,
-	tag_a1,
+	tags,
 	..._meta
 }:dehydrated_post_meta_T) {
 	return {
 		..._meta,
-		tag_a1,
+		tags,
 		pub_date: new Date(_pub_date),
 		...(_updated_date ? { updated_date: new Date(_updated_date) } : {}),
 	} as post_meta_T
@@ -60,7 +60,7 @@ export type dehydrated_post_meta_T = {
 	updated_date?:string
 	hero_image?:string
 	og_image?:string
-	tag_a1:string[]
+	tags:string[]
 	featured?:boolean
 	draft?:boolean
 	canonical_url?:string
@@ -77,7 +77,7 @@ export type post_meta_T = {
 	updated_date?:Date
 	hero_image?:string
 	og_image?:string
-	tag_a1?:string[]
+	tags?:string[]
 	featured?:boolean
 	draft?:boolean
 	canonical_url?:string

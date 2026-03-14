@@ -1,1 +1,1 @@
-export * from './tag_a1.js'
+export * from './tags.js'
